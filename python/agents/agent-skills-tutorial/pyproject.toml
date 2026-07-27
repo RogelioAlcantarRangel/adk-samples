@@ -19,15 +19,6 @@ dev = [
     "pytest>=8.3.5",
 ]
 
-[tool.ruff]
-extend = "../../../pyproject.toml"
-
-[tool.ruff.lint.per-file-ignores]
-"__init__.py" = ["F401"]
-
-[tool.ruff.lint.isort]
-known-first-party = ["app"]
-
 [tool.hatch.build.targets.wheel]
 packages = ["app"]
 

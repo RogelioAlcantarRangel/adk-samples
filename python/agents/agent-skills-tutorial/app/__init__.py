@@ -1,1 +1,5 @@
-from . import agent
+import dotenv
+
+dotenv.load_dotenv()
+
+from . import agent  # noqa: E402

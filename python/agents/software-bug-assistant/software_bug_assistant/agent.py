@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import os
+
 from google.adk.agents import Agent
 
 from .prompt import agent_instruction
@@ -31,7 +33,7 @@ if mcp_tools is not None:  # Only add if not None
     tools.append(mcp_tools)
 
 root_agent = Agent(
-    model="gemini-2.5-flash",
+    model=os.getenv("MODEL_NAME", "gemini-2.5-flash"),
     name="software_assistant",
     instruction=agent_instruction,
     tools=tools,
